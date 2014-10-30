@@ -7,14 +7,12 @@ public class ComPlayer extends Player {
     
     public ComPlayer(){}
     
-    public ComPlayer(String name)
-    {
+    public ComPlayer(String name){
         super(name);    //odwołanie się do pola klasy nadrzędnej
     }
     
     @Override
-    public int guess()
-    {
+    public int guess(){
         Random rnd = new Random();
         gs = rnd.nextInt(6)+1;
         return gs;

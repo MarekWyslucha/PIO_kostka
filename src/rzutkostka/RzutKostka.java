@@ -1,5 +1,4 @@
 package rzutkostka;
-import java.util.Random;
 import rzutkostka.Players.ComPlayer;
 import rzutkostka.Players.HumPlayer;
 
@@ -13,6 +12,6 @@ public class RzutKostka {
         Game game = new Game();
         game.addPlayer(hpl01);
         
-        
+        game.start();
     }
 }

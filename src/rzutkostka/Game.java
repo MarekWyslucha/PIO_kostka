@@ -6,15 +6,13 @@ import rzutkostka.Players.Player;
 public class Game {
     
     //HumPlayer[] players = new HumPlayer[5];
-    Player player = new Player();
+    private Player player;
     
-    void addPlayer(Player gracz)
-    {
+    void addPlayer(Player gracz){
         player = gracz;
     }
     
-    void start()
-    {
+    void start(){
         Random rnd = new Random();
         
         int roll;

@@ -6,21 +6,18 @@ public class HumPlayer extends Player {
     
     public HumPlayer(){}
     
-    public HumPlayer(String name)
-    {
+    public HumPlayer(String name){
         super(name);    //odwołanie się do pola klasy nadrzędnej
     }
     
     @Override
-    public int guess()
-    {
+    public int guess(){
         int guess = 0;
         
-        while(true)
-        {
+        while(true){
             System.out.print("Guess: ");
-            if(write.hasNextInt())
-            {
+            
+            if(write.hasNextInt()){
                 guess = write.nextInt();
                 break;
             }
