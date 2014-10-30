@@ -19,7 +19,7 @@ public abstract class Player {
         if((name != null) && (!name.isEmpty()))
             this.name = name;
         else
-            throw new IllegalArgumentException("Please correct name, it can't be empty");
+            throw new IllegalArgumentException("Please correct name, it can't be empty.");
     }
     
     public abstract int guess();

@@ -1,5 +1,7 @@
 package rzutkostka;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import rzutkostka.Players.Player;
 
@@ -7,9 +9,15 @@ public class Game {
     
     //HumPlayer[] players = new HumPlayer[5];
     private Player player;
+    private List<Player> players = new ArrayList<>();
     
-    void addPlayer(Player gracz){
-        player = gracz;
+    public void addPlayer(Player gracz){
+        if(gracz != null){
+            this.player = gracz;
+            players.add(gracz);
+        }
+        else
+            throw new IllegalArgumentException("NULL player is not permitted.");
     }
     
     void start(){
@@ -17,17 +25,23 @@ public class Game {
         
         int roll;
         int tr;
-        
+        boolean win = false;
         do{
-           roll = rnd.nextInt(6)+1;
-           //tr[0] = cpl01.guess();
-           System.out.println("Player: "+player.getName());
-           tr = player.guess();
-           
-           //System.out.println("Player: "+cpl01.getName());
-           System.out.println("Try: " + tr);
-           System.out.println("Roll: " + roll);
-           System.out.println();
-       }while(roll != tr);
+            roll = rnd.nextInt(6)+1;
+            
+            for(Player p:players){
+                System.out.println("Player: "+p.getName());
+                tr = p.guess();
+                System.out.println("Try: " + tr);
+                System.out.println();
+                
+                if(roll == tr){
+                    win = true;
+                    break;
+                }
+            }
+            System.out.println("Roll: " + roll);
+            System.out.println();
+       }while(!win);
     }
 }

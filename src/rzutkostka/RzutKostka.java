@@ -11,7 +11,9 @@ public class RzutKostka {
 
         Game game = new Game();
         game.addPlayer(hpl01);
+        game.addPlayer(cpl01);
         
         game.start();
+
     }
 }
