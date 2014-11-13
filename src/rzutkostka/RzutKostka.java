@@ -17,6 +17,8 @@ public class RzutKostka {
         game.addPlayer(cpl01);
         game.addPlayer(cpl02);
         
+        game.removePlayer("Human Player");
+        
         game.start();
 
     }

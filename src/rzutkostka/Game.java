@@ -1,6 +1,7 @@
 package rzutkostka;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import rzutkostka.Players.Player;
@@ -16,7 +17,7 @@ public class Game {
             this.player = gracz;
             
             String name;
-            int i=0;
+            int i=1;
             
             name=this.player.getName();
             for(Player pl:players){
@@ -32,7 +33,19 @@ public class Game {
             throw new IllegalArgumentException("NULL player is not permitted.");
     }
         
-    
+    public void removePlayer(String name){
+        for(Player p:players){
+            if(p.getName().equals(name)){
+                players.remove(p);
+                break;
+            }
+        }
+        Iterator itr = players.iterator();
+        while(itr.hasNext()){
+            Object elem = itr.next();
+            if(itr.next())
+        }
+    }
  
     
     void start(){
@@ -45,7 +58,7 @@ public class Game {
         do{
             roll = rnd.nextInt(6)+1;
             
-            System.out.print("---------RUNDA "+l+"----------------------------");
+            System.out.println("---------RUNDA "+l+"----------------------------");
             l++;
             
             for(Player p:players){
